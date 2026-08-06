@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Los Hijos de Maria - Photo Sender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<div id="loginPopup" class="popup">
+    <div class="login-box">
+        <h1>BAND MEMBERS ONLY</h1>
+        <p>Enter Passkey</p>
+        <input id="password" type="password">
+        <button onclick="login()">Enter</button>
+        <p id="error"></p>
+    </div>
+</div>
+
+
+<div class="container">
+
+<h1>Los Hijos de Maria</h1>
+<h2>Thank You Photo Sender</h2>
+
+
+<div class="workspace">
+
+<div class="controls">
+
+<label>Customer Name</label>
+<input id="customerName">
+
+
+<label>Customer Email</label>
+<input id="customerEmail">
+
+
+<label>Upload Photos</label>
+<input type="file" multiple accept="image/*" id="photos">
+
+
+<h3>Select Thank You Card</h3>
+
+<div class="cards">
+
+<div class="card gold" onclick="selectCard('gold')">
+CARD 1<br>
+Classic Gold
+</div>
+
+
+<div class="card fiesta" onclick="selectCard('fiesta')">
+CARD 2<br>
+Fiesta
+</div>
+
+
+<div class="card night" onclick="selectCard('night')">
+CARD 3<br>
+Night Stage
+</div>
+
+</div>
+
+<button class="send">
+SEND EMAIL
+</button>
+
+</div>
+
+
+
+<div class="preview">
+
+<h2>Email Preview</h2>
+
+<div id="emailPreview" class="email gold">
+
+<h1>Los Hijos de Maria</h1>
+
+<h2>Thank You!</h2>
+
+<p id="previewText">
+Thank you for supporting live music.
+</p>
+
+
+<div id="photoPreview"></div>
+
+
+<p>
+We hope to see you again soon!
+</p>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
