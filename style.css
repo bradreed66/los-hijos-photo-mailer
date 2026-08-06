@@ -260,3 +260,60 @@ h2 {
     margin-top:30px;
     width:100%;
 }
+
+
+/* EMAIL PREVIEW CLOSED CARD SIZE */
+
+#emailPreview.card {
+    width:320px;
+    height:440px;
+    margin:auto;
+}
+
+
+
+/* OPENED CARD */
+
+#emailPreview.open-card {
+    display:flex;
+    width:800px;
+    height:440px;
+    margin:auto;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+
+
+/* LEFT SIDE - FRONT COVER */
+
+#emailPreview .card-front {
+    width:50%;
+    height:100%;
+    background:inherit;
+}
+
+
+
+/* RIGHT SIDE - INSIDE MESSAGE */
+
+#emailPreview .card-inside {
+    width:50%;
+    height:100%;
+    background:white;
+    color:black;
+    padding:40px;
+    text-align:center;
+    border-left:2px solid rgba(0,0,0,.2);
+}
+
+
+#emailPreview .card-inside h2 {
+    color:#d4af37;
+}
+
+
+#emailPreview .card-inside p {
+    font-size:18px;
+    line-height:1.6;
+}
