@@ -1,6 +1,9 @@
+window.onload = function() {
+
+
 // LOGIN
 
-function login() {
+window.login = function() {
 
     const password = document.getElementById("password").value;
     const popup = document.getElementById("loginPopup");
@@ -17,16 +20,15 @@ function login() {
 
     }
 
-}
+};
 
 
 
 // CARD SELECTOR
 
-function selectCard(card) {
+window.selectCard = function(card) {
 
     const preview = document.getElementById("emailPreview");
-
 
     preview.className = "email " + card;
 
@@ -69,16 +71,17 @@ function selectCard(card) {
 
     }
 
-}
+};
 
 
 
-// PHOTO UPLOAD PREVIEW
+// PHOTO UPLOAD
 
-document
-.getElementById("photos")
-.addEventListener("change", function(event){
+const photoInput = document.getElementById("photos");
 
+if(photoInput){
+
+photoInput.addEventListener("change", function(event){
 
     const previewBox = document.getElementById("photoPreview");
 
@@ -87,12 +90,10 @@ document
 
     Array.from(event.target.files).forEach(file => {
 
-
         const reader = new FileReader();
 
 
         reader.onload = function(e){
-
 
             const img = document.createElement("img");
 
@@ -100,14 +101,16 @@ document
 
             previewBox.appendChild(img);
 
-
-        }
+        };
 
 
         reader.readAsDataURL(file);
 
-
     });
 
-
 });
+
+}
+
+
+};
