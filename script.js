@@ -54,7 +54,9 @@ window.openCard = function() {
 
         preview.innerHTML = `
 
-        <div class="card-front">
+        <div class="card-open-left">
+
+            <div id="photoPreview"></div>
 
         </div>
 
@@ -67,8 +69,6 @@ window.openCard = function() {
             Thank you for supporting Los Hijos de Maria.
             Your support keeps live music alive.
             </p>
-
-            <div id="photoPreview"></div>
 
             <p>
             We hope to see you again soon!
@@ -87,7 +87,9 @@ window.openCard = function() {
 
         preview.innerHTML = `
 
-        <div class="card-front">
+        <div class="card-open-left">
+
+            <div id="photoPreview"></div>
 
         </div>
 
@@ -98,9 +100,8 @@ window.openCard = function() {
 
             <p>
             Thank you for being part of our music journey.
+            We appreciate your support.
             </p>
-
-            <div id="photoPreview"></div>
 
             <p>
             See you at the next show!
@@ -119,7 +120,9 @@ window.openCard = function() {
 
         preview.innerHTML = `
 
-        <div class="card-front">
+        <div class="card-open-left">
+
+            <div id="photoPreview"></div>
 
         </div>
 
@@ -133,8 +136,6 @@ window.openCard = function() {
             We can't wait to see you again.
             </p>
 
-            <div id="photoPreview"></div>
-
             <p>
             Until next time 🎵
             </p>
@@ -146,7 +147,6 @@ window.openCard = function() {
     }
 
 };
-
 
 
 // PHOTO UPLOAD
