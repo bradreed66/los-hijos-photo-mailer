@@ -314,7 +314,11 @@ h2 {
 #emailPreview .card-open-left {
     width:50%;
     height:100%;
-    background:#111;
+    background-image:url("assets/ty-card1.png");
+    background-size:200% 100%;
+    background-position:left center;
+    background-repeat:no-repeat;
+
     display:flex;
     justify-content:center;
     align-items:center;
@@ -327,11 +331,19 @@ h2 {
 #emailPreview .card-inside {
     width:50%;
     height:100%;
-    background:white;
-    color:black;
+    background-image:url("assets/ty-card1.png");
+    background-size:200% 100%;
+    background-position:right center;
+    background-repeat:no-repeat;
+
+    color:white;
     padding:40px;
     text-align:center;
     border-left:2px solid rgba(0,0,0,.2);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 
@@ -357,37 +369,7 @@ h2 {
 }
 
 
-/* LEFT SIDE - PHOTOS */
 
-.card-open-left {
-    width:50%;
-    height:100%;
-    background-image:url("assets/ty-card1.png");
-
-    background-size:100% 100%;
-    background-position:-500px -500px;
-    background-repeat:no-repeat;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-/* RIGHT SIDE - MESSAGE */
-
-.card-inside {
-    width:50%;
-    height:100%;
-    padding:40px;
-    text-align:center;
-    color:white;
-    background-size:200% 100%;
-    background-position:right center;
-    background-repeat:no-repeat;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
 
 /* GOLD */
 
