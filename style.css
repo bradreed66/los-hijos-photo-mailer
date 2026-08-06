@@ -245,14 +245,37 @@ h2 {
     display:flex;
     flex-wrap:wrap;
     gap:10px;
+    justify-content:center;
 }
 
 
-#photoPreview img {
+.photo-item {
+    position:relative;
+}
+
+
+.photo-item img {
     width:120px;
     height:120px;
     object-fit:cover;
     border-radius:8px;
+}
+
+
+.remove-photo {
+    position:absolute;
+    top:-8px;
+    right:-8px;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:black;
+    color:white;
+    border:1px solid white;
+    cursor:pointer;
+    font-size:16px;
+    line-height:18px;
+    padding:0;
 }
 
 
