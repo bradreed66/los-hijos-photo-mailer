@@ -242,10 +242,12 @@ h2 {
 
 
 #photoPreview {
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    justify-items:center;
+    align-items:center;
+    width:100%;
 }
 
 
@@ -255,8 +257,8 @@ h2 {
 
 
 .photo-item img {
-    width:120px;
-    height:120px;
+    width:85px;
+    height:85px;
     object-fit:cover;
     border-radius:8px;
 }
@@ -283,7 +285,6 @@ h2 {
     margin-top:30px;
     width:100%;
 }
-
 
 /* EMAIL PREVIEW CLOSED CARD SIZE */
 
