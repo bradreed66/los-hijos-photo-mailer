@@ -363,7 +363,7 @@ h2 {
     width:50%;
     height:100%;
     background-size:cover;
-    background-position:center;
+    background-position: calc(50% - 120px) calc(50% - 100px);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -372,17 +372,6 @@ h2 {
 
 /* RIGHT SIDE - MESSAGE */
 
-/* ADJUST OPEN CARD BACKGROUND POSITION */
-
-.card-open-left {
-    background-position: calc(50% - 120px) calc(50% - 100px);
-}
-
-
-.card-inside {
-    background-position: calc(50% + 100px) calc(50% - 100px);
-    
-}
 .card-inside {
     width:50%;
     height:100%;
@@ -390,12 +379,11 @@ h2 {
     text-align:center;
     color:white;
     background-size:cover;
-    background-position:center;
+    background-position: calc(50% + 100px) calc(50% - 100px);
     display:flex;
     flex-direction:column;
     justify-content:center;
 }
-
 
 
 /* GOLD */
