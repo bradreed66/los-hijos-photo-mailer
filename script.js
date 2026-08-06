@@ -41,6 +41,7 @@ window.selectCard = function(card) {
 };
 
 
+
 // OPEN CARD
 
 window.openCard = function() {
@@ -48,9 +49,10 @@ window.openCard = function() {
     const preview = document.getElementById("emailPreview");
 
 
-    if(selectedCard === "gold") {
+    preview.className = "open-card";
 
-        preview.className = "open-card";
+
+    if(selectedCard === "gold") {
 
         preview.innerHTML = `
 
@@ -81,9 +83,8 @@ window.openCard = function() {
     }
 
 
-    if(selectedCard === "fiesta") {
 
-        preview.className = "open-card";
+    if(selectedCard === "fiesta") {
 
         preview.innerHTML = `
 
@@ -114,9 +115,8 @@ window.openCard = function() {
     }
 
 
-    if(selectedCard === "night") {
 
-        preview.className = "open-card";
+    if(selectedCard === "night") {
 
         preview.innerHTML = `
 
@@ -149,6 +149,7 @@ window.openCard = function() {
 };
 
 
+
 // PHOTO UPLOAD
 
 const photoInput = document.getElementById("photos");
@@ -159,10 +160,14 @@ photoInput.addEventListener("change", function(event){
 
     const previewBox = document.getElementById("photoPreview");
 
+    if(!previewBox) return;
+
+
     previewBox.innerHTML = "";
 
 
     Array.from(event.target.files).forEach(file => {
+
 
         const reader = new FileReader();
 
@@ -180,7 +185,9 @@ photoInput.addEventListener("change", function(event){
 
         reader.readAsDataURL(file);
 
+
     });
+
 
 });
 
