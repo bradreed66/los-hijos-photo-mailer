@@ -248,6 +248,7 @@ h2 {
     justify-items:center;
     align-items:center;
     width:100%;
+    transform:translateX(15px);
 }
 
 
