@@ -316,7 +316,7 @@ h2 {
     height:100%;
     background-image:url("assets/ty-card1.png");
     background-size:120% 100%;
-   background-position:-80px 20px;
+    background-position:left center;
     background-repeat:no-repeat;
 
     display:flex;
@@ -345,7 +345,6 @@ h2 {
     flex-direction:column;
     justify-content:center;
 }
-
 
 #emailPreview .card-inside h2 {
     color:#d4af37;
