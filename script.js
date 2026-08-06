@@ -152,21 +152,23 @@ window.openCard = function() {
 
 // PHOTO UPLOAD
 
+let uploadedPhotos = [];
+
+
 const photoInput = document.getElementById("photos");
+
 
 if(photoInput){
 
 photoInput.addEventListener("change", function(event){
 
-    const previewBox = document.getElementById("photoPreview");
-
-    if(!previewBox) return;
-
-
-    previewBox.innerHTML = "";
-
 
     Array.from(event.target.files).forEach(file => {
+
+
+        if(uploadedPhotos.length >= 9){
+            return;
+        }
 
 
         const reader = new FileReader();
@@ -174,11 +176,11 @@ photoInput.addEventListener("change", function(event){
 
         reader.onload = function(e){
 
-            const img = document.createElement("img");
 
-            img.src = e.target.result;
+            uploadedPhotos.push(e.target.result);
 
-            previewBox.appendChild(img);
+            updatePhotos();
+
 
         };
 
@@ -189,9 +191,68 @@ photoInput.addEventListener("change", function(event){
     });
 
 
+    // allows adding more photos one at a time
+    photoInput.value = "";
+
+
 });
 
 }
 
 
-};
+
+function updatePhotos(){
+
+
+    const previewBox = document.getElementById("photoPreview");
+
+
+    if(!previewBox) return;
+
+
+    previewBox.innerHTML = "";
+
+
+    uploadedPhotos.forEach((photo,index)=>{
+
+
+        const container = document.createElement("div");
+
+        container.className = "photo-item";
+
+
+        const img = document.createElement("img");
+
+        img.src = photo;
+
+
+
+        const remove = document.createElement("button");
+
+        remove.innerHTML = "×";
+
+        remove.className = "remove-photo";
+
+
+        remove.onclick = function(){
+
+            uploadedPhotos.splice(index,1);
+
+            updatePhotos();
+
+        };
+
+
+
+        container.appendChild(img);
+
+        container.appendChild(remove);
+
+
+        previewBox.appendChild(container);
+
+
+    });
+
+
+}
