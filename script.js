@@ -9,6 +9,7 @@ window.login = function() {
     const popup = document.getElementById("loginPopup");
     const error = document.getElementById("error");
 
+
     if(password === "MexiMerican5") {
 
         popup.style.display = "none";
@@ -129,9 +130,11 @@ photoInput.addEventListener("change", function(event){
 
         reader.onload = function(e){
 
+
             uploadedPhotos.push(e.target.result);
 
             updatePhotos();
+
 
         };
 
@@ -161,14 +164,43 @@ function updatePhotos(){
     previewBox.innerHTML = "";
 
 
-    uploadedPhotos.forEach(photo => {
+    uploadedPhotos.forEach((photo,index)=>{
+
+
+        const container = document.createElement("div");
+
+        container.className = "photo-item";
 
 
         const img = document.createElement("img");
 
         img.src = photo;
 
-        previewBox.appendChild(img);
+
+        const remove = document.createElement("button");
+
+        remove.innerHTML = "×";
+
+        remove.className = "remove-photo";
+
+
+        remove.onclick = function(event){
+
+            event.stopPropagation();
+
+            uploadedPhotos.splice(index,1);
+
+            updatePhotos();
+
+        };
+
+
+        container.appendChild(img);
+
+        container.appendChild(remove);
+
+
+        previewBox.appendChild(container);
 
 
     });
