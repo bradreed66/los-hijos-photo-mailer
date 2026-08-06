@@ -26,21 +26,35 @@ window.login = function() {
 
 // CARD SELECTOR
 
+let selectedCard = "gold";
+
 window.selectCard = function(card) {
+
+    selectedCard = card;
+
+    const preview = document.getElementById("emailPreview");
+
+    preview.className = "card " + card;
+
+    preview.innerHTML = "";
+
+};
+
+
+// OPEN CARD
+
+window.openCard = function() {
 
     const preview = document.getElementById("emailPreview");
 
 
-    if(card === "gold") {
+    if(selectedCard === "gold") {
 
         preview.className = "open-card gold";
 
         preview.innerHTML = `
 
         <div class="card-front">
-
-            <h1>Los Hijos de Maria</h1>
-            <p>Thank You</p>
 
         </div>
 
@@ -50,8 +64,8 @@ window.selectCard = function(card) {
             <h2>Thank You!</h2>
 
             <p>
-            Thank you for supporting live music.
-            Your support helps keep our music alive.
+            Thank you for supporting Los Hijos de Maria.
+            Your support keeps live music alive.
             </p>
 
             <div id="photoPreview"></div>
@@ -67,16 +81,13 @@ window.selectCard = function(card) {
     }
 
 
-    if(card === "fiesta") {
+    if(selectedCard === "fiesta") {
 
         preview.className = "open-card fiesta";
 
         preview.innerHTML = `
 
         <div class="card-front">
-
-            <h1>Los Hijos de Maria</h1>
-            <p>Muchas Gracias</p>
 
         </div>
 
@@ -87,7 +98,6 @@ window.selectCard = function(card) {
 
             <p>
             Thank you for being part of our music journey.
-            We appreciate your support.
             </p>
 
             <div id="photoPreview"></div>
@@ -103,16 +113,13 @@ window.selectCard = function(card) {
     }
 
 
-    if(card === "night") {
+    if(selectedCard === "night") {
 
         preview.className = "open-card night";
 
         preview.innerHTML = `
 
         <div class="card-front">
-
-            <h1>Los Hijos de Maria</h1>
-            <p>After The Show</p>
 
         </div>
 
