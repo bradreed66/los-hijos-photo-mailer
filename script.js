@@ -9,7 +9,6 @@ window.login = function() {
     const popup = document.getElementById("loginPopup");
     const error = document.getElementById("error");
 
-
     if(password === "MexiMerican5") {
 
         popup.style.display = "none";
@@ -48,103 +47,56 @@ window.openCard = function() {
 
     const preview = document.getElementById("emailPreview");
 
-
     preview.className = "open-card";
 
 
+    let title = "";
+    let message = "";
+
+
     if(selectedCard === "gold") {
-
-        preview.innerHTML = `
-
-        <div class="card-open-left">
-
-            <div id="photoPreview"></div>
-
-        </div>
-
-
-        <div class="card-inside">
-
-            <h2>Thank You!</h2>
-
-            <p>
-            Thank you for supporting Los Hijos de Maria.
-            Your support keeps live music alive.
-            </p>
-
-            <p>
-            We hope to see you again soon!
-            </p>
-
-        </div>
-
-        `;
-
+        title = "Thank You!";
+        message = "Thank you for supporting Los Hijos de Maria. Your support keeps live music alive.";
     }
-
 
 
     if(selectedCard === "fiesta") {
-
-        preview.innerHTML = `
-
-        <div class="card-open-left">
-
-            <div id="photoPreview"></div>
-
-        </div>
-
-
-        <div class="card-inside">
-
-            <h2>Muchas Gracias!</h2>
-
-            <p>
-            Thank you for being part of our music journey.
-            We appreciate your support.
-            </p>
-
-            <p>
-            See you at the next show!
-            </p>
-
-        </div>
-
-        `;
-
+        title = "Muchas Gracias!";
+        message = "Thank you for being part of our music journey. We appreciate your support.";
     }
-
 
 
     if(selectedCard === "night") {
-
-        preview.innerHTML = `
-
-        <div class="card-open-left">
-
-            <div id="photoPreview"></div>
-
-        </div>
-
-
-        <div class="card-inside">
-
-            <h2>Thank You For Coming</h2>
-
-            <p>
-            Your support keeps live music alive.
-            We can't wait to see you again.
-            </p>
-
-            <p>
-            Until next time 🎵
-            </p>
-
-        </div>
-
-        `;
-
+        title = "Thank You For Coming";
+        message = "Your support keeps live music alive. We can't wait to see you again.";
     }
+
+
+    preview.innerHTML = `
+
+    <div class="card-open-left">
+
+        <div id="photoPreview"></div>
+
+    </div>
+
+
+    <div class="card-inside">
+
+        <h2>${title}</h2>
+
+        <p>${message}</p>
+
+        <p>
+        We hope to see you again soon!
+        </p>
+
+    </div>
+
+    `;
+
+
+    updatePhotos();
 
 };
 
@@ -177,11 +129,9 @@ photoInput.addEventListener("change", function(event){
 
         reader.onload = function(e){
 
-
             uploadedPhotos.push(e.target.result);
 
             updatePhotos();
-
 
         };
 
@@ -190,9 +140,6 @@ photoInput.addEventListener("change", function(event){
 
 
     });
-
-
-    photoInput.value = "";
 
 
 });
@@ -214,43 +161,14 @@ function updatePhotos(){
     previewBox.innerHTML = "";
 
 
-    uploadedPhotos.forEach((photo,index)=>{
-
-
-        const container = document.createElement("div");
-
-        container.className = "photo-item";
+    uploadedPhotos.forEach(photo => {
 
 
         const img = document.createElement("img");
 
         img.src = photo;
 
-
-
-        const remove = document.createElement("button");
-
-        remove.innerHTML = "×";
-
-        remove.className = "remove-photo";
-
-
-        remove.onclick = function(){
-
-            uploadedPhotos.splice(index,1);
-
-            updatePhotos();
-
-        };
-
-
-
-        container.appendChild(img);
-
-        container.appendChild(remove);
-
-
-        previewBox.appendChild(container);
+        previewBox.appendChild(img);
 
 
     });
