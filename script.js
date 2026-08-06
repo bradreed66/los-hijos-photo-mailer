@@ -160,6 +160,7 @@ const photoInput = document.getElementById("photos");
 
 if(photoInput){
 
+
 photoInput.addEventListener("change", function(event){
 
 
@@ -191,11 +192,11 @@ photoInput.addEventListener("change", function(event){
     });
 
 
-    // allows adding more photos one at a time
     photoInput.value = "";
 
 
 });
+
 
 }
 
@@ -256,3 +257,6 @@ function updatePhotos(){
 
 
 }
+
+
+};
