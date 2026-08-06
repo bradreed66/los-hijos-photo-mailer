@@ -362,14 +362,16 @@ h2 {
 .card-open-left {
     width:50%;
     height:100%;
-    background-size:200% 100%;
-    background-position:left center;
+    background-image:url("assets/ty-card1.png");
+
+    background-size:100% 100%;
+    background-position:-100px -100px;
     background-repeat:no-repeat;
+
     display:flex;
     align-items:center;
     justify-content:center;
 }
-
 
 /* RIGHT SIDE - MESSAGE */
 
