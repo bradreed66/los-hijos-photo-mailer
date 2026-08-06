@@ -48,7 +48,7 @@ window.openCard = function() {
 
     const preview = document.getElementById("emailPreview");
 
-    preview.className = "open-card";
+    preview.className = "open-card " + selectedCard;
 
 
     let title = "";
