@@ -281,16 +281,20 @@ h2 {
     margin:auto;
     border-radius:15px;
     overflow:hidden;
+    background:none !important;
 }
 
 
 
-/* LEFT SIDE - FRONT COVER */
+/* LEFT SIDE - PHOTOS */
 
-#emailPreview .card-front {
+#emailPreview .card-open-left {
     width:50%;
     height:100%;
-    background:inherit;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 
