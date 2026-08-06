@@ -344,3 +344,82 @@ h2 {
     font-size:18px;
     line-height:1.6;
 }
+
+/* OPEN CARD BACKGROUNDS */
+
+#emailPreview.open-card {
+    display:flex;
+    width:800px;
+    height:440px;
+    margin:auto;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+
+/* LEFT SIDE - PHOTOS */
+
+.card-open-left {
+    width:50%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* RIGHT SIDE - MESSAGE */
+
+.card-inside {
+    width:50%;
+    height:100%;
+    padding:40px;
+    text-align:center;
+    color:white;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+
+/* GOLD */
+
+#emailPreview.open-card .card-open-left {
+    background-image:url("assets/ty-card1.png");
+}
+
+
+#emailPreview.open-card .card-inside {
+    background-image:url("assets/ty-card1.png");
+}
+
+
+
+/* FIESTA */
+
+#emailPreview.open-card.fiesta .card-open-left {
+    background-image:url("assets/ty-card2.png");
+}
+
+
+#emailPreview.open-card.fiesta .card-inside {
+    background-image:url("assets/ty-card2.png");
+}
+
+
+
+/* NIGHT */
+
+#emailPreview.open-card.night .card-open-left {
+    background-image:url("assets/ty-card3.png");
+}
+
+
+#emailPreview.open-card.night .card-inside {
+    background-image:url("assets/ty-card3.png");
+}
