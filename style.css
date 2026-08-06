@@ -375,14 +375,14 @@ h2 {
 /* ADJUST OPEN CARD BACKGROUND POSITION */
 
 .card-open-left {
-    background-position: calc(50% - 70px) calc(50% - 45px);
+    background-position: calc(50% - 100px) calc(50% - 80px);
 }
 
 
 .card-inside {
-    background-position: calc(50% - 70px) calc(50% - 45px);
+    background-position: calc(50% + 100px) calc(50% - 80px);
+    transform: scaleX(-1);
 }
-
 .card-inside {
     width:50%;
     height:100%;
