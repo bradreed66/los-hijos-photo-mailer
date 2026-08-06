@@ -375,13 +375,13 @@ h2 {
 /* ADJUST OPEN CARD BACKGROUND POSITION */
 
 .card-open-left {
-    background-position: calc(50% - 100px) calc(50% - 80px);
+    background-position: calc(50% - 120px) calc(50% - 100px);
 }
 
 
 .card-inside {
-    background-position: calc(50% + 100px) calc(50% - 80px);
-    transform: scaleX(-1);
+    background-position: calc(50% + 100px) calc(50% - 100px);
+    
 }
 .card-inside {
     width:50%;
