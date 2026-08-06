@@ -152,12 +152,15 @@ h2 {
 /* GOLDEN STAGE */
 
 .gold {
-    background: linear-gradient(
-        135deg,
-        #050505,
-        #3a2900,
-        #d4af37
-    );
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(212,175,55,.35)
+    ),
+    url("assets/thank-you1.jpg");
+
+    background-size: cover;
+    background-position: center;
 
     color:white;
     border-color:#d4af37;
@@ -173,11 +176,15 @@ h2 {
 /* RAÍCES & MÚSICA */
 
 .fiesta {
-    background: linear-gradient(
-        135deg,
-        #fff1d0,
-        #8b0000
-    );
+    background:
+    linear-gradient(
+        rgba(139,0,0,.45),
+        rgba(255,241,208,.35)
+    ),
+    url("assets/thank-you2.jpg");
+
+    background-size: cover;
+    background-position: center;
 
     color:white;
     border-color:black;
@@ -193,12 +200,15 @@ h2 {
 /* AFTER THE SHOW */
 
 .night {
-    background: linear-gradient(
-        135deg,
-        #03001c,
-        #1515aa,
-        #6b00ff
-    );
+    background:
+    linear-gradient(
+        rgba(3,0,28,.55),
+        rgba(21,21,170,.45)
+    ),
+    url("assets/thank-you3.jpg");
+
+    background-size: cover;
+    background-position: center;
 
     color:white;
     border-color:white;
