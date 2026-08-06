@@ -362,8 +362,9 @@ h2 {
 .card-open-left {
     width:50%;
     height:100%;
-    background-size: 200%;
-    background-position: calc(50% - 200px) calc(50% - 180px);
+    background-size:200% 100%;
+    background-position:left center;
+    background-repeat:no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -378,13 +379,13 @@ h2 {
     padding:40px;
     text-align:center;
     color:white;
-    background-size: 200%;
-    background-position: calc(50% + 200px) calc(50% - 180px);
+    background-size:200% 100%;
+    background-position:right center;
+    background-repeat:no-repeat;
     display:flex;
     flex-direction:column;
     justify-content:center;
 }
-
 
 /* GOLD */
 
