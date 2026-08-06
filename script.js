@@ -50,7 +50,7 @@ window.openCard = function() {
 
     if(selectedCard === "gold") {
 
-        preview.className = "open-card gold";
+        preview.className = "open-card";
 
         preview.innerHTML = `
 
@@ -83,7 +83,7 @@ window.openCard = function() {
 
     if(selectedCard === "fiesta") {
 
-        preview.className = "open-card fiesta";
+        preview.className = "open-card";
 
         preview.innerHTML = `
 
@@ -116,7 +116,7 @@ window.openCard = function() {
 
     if(selectedCard === "night") {
 
-        preview.className = "open-card night";
+        preview.className = "open-card";
 
         preview.innerHTML = `
 
