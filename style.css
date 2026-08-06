@@ -362,7 +362,7 @@ h2 {
 .card-open-left {
     width:50%;
     height:100%;
-    background-size:cover;
+    background-size: 200%;
     background-position: calc(50% - 200px) calc(50% - 180px);
     display:flex;
     align-items:center;
@@ -378,7 +378,7 @@ h2 {
     padding:40px;
     text-align:center;
     color:white;
-    background-size:cover;
+    background-size: 200%;
     background-position: calc(50% + 200px) calc(50% - 180px);
     display:flex;
     flex-direction:column;
