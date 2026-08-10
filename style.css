@@ -1,398 +1,348 @@
 * {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    background: #050505;
-    color: white;
+margin: 0;
+background: #050505;
+color: white;
 }
-
 
 /* LOGIN POPUP */
 
 .popup {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,.85);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 10;
 }
-
 
 .login-box {
-    background: #111;
-    border: 2px solid #d4af37;
-    padding: 40px;
-    text-align: center;
-    width: 350px;
-    border-radius: 15px;
+background: #111;
+border: 2px solid #d4af37;
+padding: 40px;
+text-align: center;
+width: 350px;
+border-radius: 15px;
 }
-
 
 .login-box h1 {
-    color: #d4af37;
-    font-size: 26px;
+color: #d4af37;
+font-size: 26px;
 }
-
 
 .login-box input {
-    width: 100%;
-    padding: 12px;
-    margin: 15px 0;
+width: 100%;
+padding: 12px;
+margin: 15px 0;
 }
-
 
 button {
-    background: #d4af37;
-    color: black;
-    border: none;
-    padding: 12px 25px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
+background: #d4af37;
+color: black;
+border: none;
+padding: 12px 25px;
+cursor: pointer;
+font-weight: bold;
+border-radius: 5px;
 }
-
 
 #error {
-    color: red;
+color: red;
 }
-
 
 /* MAIN PAGE */
 
-
 .container {
-    padding: 40px;
+padding: 40px;
 }
-
 
 h1 {
-    text-align: center;
-    color: #d4af37;
+text-align: center;
+color: #d4af37;
 }
-
 
 h2 {
-    text-align: center;
+text-align: center;
 }
-
-
 
 .workspace {
-    display: flex;
-    gap: 40px;
-    margin-top: 40px;
+display: flex;
+gap: 40px;
+margin-top: 40px;
 }
-
 
 .controls {
-    width: 40%;
+width: 40%;
 }
-
 
 .controls input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0 20px;
+width: 100%;
+padding: 12px;
+margin: 10px 0 20px;
 }
-
 
 /* CARDS */
 
 .cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
 }
-
 
 .card {
-    width: 160px;
-    height: 220px;
-    padding: 20px;
-    cursor: pointer;
-    border-radius: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: .3s;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid rgba(255,255,255,.5);
-    box-shadow: 0 10px 25px rgba(0,0,0,.5);
+width: 160px;
+height: 220px;
+padding: 20px;
+cursor: pointer;
+border-radius: 15px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+transition: .3s;
+position: relative;
+overflow: hidden;
+border: 2px solid rgba(255,255,255,.5);
+box-shadow: 0 10px 25px rgba(0,0,0,.5);
 }
-
 
 .card:hover {
-    transform: translateY(-8px) scale(1.04);
-    border-color: #d4af37;
+transform: translateY(-8px) scale(1.04);
+border-color: #d4af37;
 }
-
 
 .card h3 {
-    font-size: 22px;
-    letter-spacing: 2px;
-    margin: 0;
+font-size: 22px;
+letter-spacing: 2px;
+margin: 0;
 }
-
 
 .card p {
-    margin-top: 15px;
-    font-size: 13px;
-    letter-spacing: 1px;
+margin-top: 15px;
+font-size: 13px;
+letter-spacing: 1px;
 }
-
-
 
 /* GOLDEN STAGE */
 
 .gold {
-    background:
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(212,175,55,.35)
-    ),
-    url("assets/thank-you1.jpg");
+background:
+linear-gradient(
+rgba(0,0,0,.45),
+rgba(212,175,55,.35)
+),
+url("assets/thank-you1.jpg");
 
-    background-size: cover;
-    background-position: center;
+background-size: cover;
+background-position: center;
 
-    color:white;
-    border-color:#d4af37;
+color:white;
+border-color:#d4af37;
 }
-
 
 .gold h3 {
-    color:#ffd76a;
+color:#ffd76a;
 }
-
-
 
 /* RAÍCES & MÚSICA */
 
 .fiesta {
-    background:
-    linear-gradient(
-        rgba(139,0,0,.45),
-        rgba(255,241,208,.35)
-    ),
-    url("assets/thank-you2.jpg");
+background:
+linear-gradient(
+rgba(139,0,0,.45),
+rgba(255,241,208,.35)
+),
+url("assets/thank-you2.jpg");
 
-    background-size: cover;
-    background-position: center;
+background-size: cover;
+background-position: center;
 
-    color:white;
-    border-color:black;
+color:white;
+border-color:black;
 }
-
 
 .fiesta h3 {
-    color:#ffd700;
+color:#ffd700;
 }
-
-
 
 /* AFTER THE SHOW */
 
 .night {
-    background:
-    linear-gradient(
-        rgba(3,0,28,.55),
-        rgba(21,21,170,.45)
-    ),
-    url("assets/thank-you3.jpg");
+background:
+linear-gradient(
+rgba(3,0,28,.55),
+rgba(21,21,170,.45)
+),
+url("assets/thank-you3.jpg");
 
-    background-size: cover;
-    background-position: center;
+background-size: cover;
+background-position: center;
 
-    color:white;
-    border-color:white;
+color:white;
+border-color:white;
 }
-
 
 .night h3 {
-    color:#9ee7ff;
+color:#9ee7ff;
 }
-
 
 /* EMAIL PREVIEW */
 
-
 .preview {
-    width: 60%;
+width: 60%;
 }
-
 
 .email {
-    min-height: 450px;
-    padding: 30px;
-    border-radius: 15px;
-    border: 3px solid #d4af37;
+min-height: 450px;
+padding: 30px;
+border-radius: 15px;
+border: 3px solid #d4af37;
 }
-
 
 .email h1 {
-    color:#d4af37;
+color:#d4af37;
 }
-
 
 #photoPreview {
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:8px;
-    justify-items:center;
-    align-items:center;
-    width:100%;
-    transform:translateX(15px);
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:8px;
+justify-items:center;
+align-items:center;
+width:100%;
+transform:translateX(15px);
 }
-
 
 .photo-item {
-    position:relative;
+position:relative;
 }
-
 
 .photo-item img {
-    width:85px;
-    height:85px;
-    object-fit:cover;
-    border-radius:8px;
+width:85px;
+height:85px;
+object-fit:cover;
+border-radius:8px;
 }
-
 
 .remove-photo {
-    position:absolute;
-    top:-8px;
-    right:-8px;
-    width:22px;
-    height:22px;
-    border-radius:50%;
-    background:black;
-    color:white;
-    border:1px solid white;
-    cursor:pointer;
-    font-size:16px;
-    line-height:18px;
-    padding:0;
+position:absolute;
+top:-8px;
+right:-8px;
+width:22px;
+height:22px;
+border-radius:50%;
+background:black;
+color:white;
+border:1px solid white;
+cursor:pointer;
+font-size:16px;
+line-height:18px;
+padding:0;
 }
 
-
 .send {
-    margin-top:30px;
-    width:100%;
+margin-top:30px;
+width:100%;
 }
 
 /* EMAIL PREVIEW CLOSED CARD SIZE */
 
 #emailPreview.card {
-    width:320px;
-    height:440px;
-    margin:auto;
+width:320px;
+height:440px;
+margin:auto;
 }
-
-
 
 /* OPENED CARD */
 
 #emailPreview.open-card {
-    display:flex;
-    width:800px;
-    height:400px;
-    margin:auto;
-    border-radius:15px;
-    overflow:hidden;
-    background:none !important;
+display:flex;
+width:800px;
+height:400px;
+margin:auto;
+border-radius:15px;
+overflow:hidden;
+background:none !important;
 }
-
 
 /* LEFT SIDE - PHOTOS */
 
 #emailPreview .card-open-left {
-    width:50%;
-    height:100%;
-    background-image:url("assets/ty-card1.png");
-    background-size:120% 100%;
-    background-position:left 70%;
-    background-repeat:no-repeat;
+width:50%;
+height:100%;
+background-image:url("assets/ty-card1.png");
+background-size:120% 120%;
+background-position:left 30%;
+background-repeat:no-repeat;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+display:flex;
+justify-content:center;
+align-items:center;
 }
-
 
 /* RIGHT SIDE - INSIDE MESSAGE */
 
 #emailPreview .card-inside {
-    width:50%;
-    height:100%;
-    background-image:url("assets/ty-card1.png");
-    background-size:120% 100%;
-    background-position:right 70%;
-    background-repeat:no-repeat;
+width:50%;
+height:100%;
+background-image:url("assets/ty-card1.png");
+background-size:120% 120%;
+background-position:right 30%;
+background-repeat:no-repeat;
 
-    color:white;
-    padding:40px;
-    text-align:center;
-    border-left:2px solid rgba(0,0,0,.2);
+color:white;
+padding:40px;
+text-align:center;
+border-left:2px solid rgba(0,0,0,.2);
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-
 #emailPreview .card-inside h2 {
-    color:#d4af37;
+color:#d4af37;
 }
 
 #emailPreview .card-inside p {
-    font-size:18px;
-    line-height:1.6;
+font-size:18px;
+line-height:1.6;
 }
 
-
 /* OPEN CARD BACKGROUNDS */
-
 
 /* GOLD */
 
 #emailPreview.open-card .card-open-left {
-    background-image:url("assets/ty-card1.png");
+background-image:url("assets/ty-card1.png");
 }
-
 
 #emailPreview.open-card .card-inside {
-    background-image:url("assets/ty-card1.png");
+background-image:url("assets/ty-card1.png");
 }
-
-
 
 /* FIESTA */
 
 #emailPreview.open-card.fiesta .card-open-left {
-    background-image:url("assets/ty-card2.png");
+background-image:url("assets/ty-card2.png");
 }
-
 
 #emailPreview.open-card.fiesta .card-inside {
-    background-image:url("assets/ty-card2.png");
+background-image:url("assets/ty-card2.png");
 }
-
-
 
 /* NIGHT */
 
 #emailPreview.open-card.night .card-open-left {
-    background-image:url("assets/ty-card3.png");
+background-image:url("assets/ty-card3.png");
 }
-
 
 #emailPreview.open-card.night .card-inside {
-    background-image:url("assets/ty-card3.png");
+background-image:url("assets/ty-card3.png");
 }
+
