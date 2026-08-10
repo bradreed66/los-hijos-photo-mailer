@@ -302,7 +302,7 @@ h2 {
 #emailPreview.open-card {
     display:flex;
     width:800px;
-    height:360px;
+    height:400px;
     margin:auto;
     border-radius:15px;
     overflow:hidden;
