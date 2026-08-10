@@ -278,24 +278,105 @@ if(sendButton){
 
         sendButton.disabled = true;
 
-        sendButton.innerText = "SENDING...";
+        sendButton.innerText = "PREPARING PHOTOS...";
 
 
         try{
 
-            const photos = uploadedPhotos.map((photo, index) => {
+            const emailPhotos = [];
 
-                return {
 
-                    content: photo.split(",")[1],
+            for(let i = 0; i < uploadedPhotos.length; i++){
 
-                    data: photo,
+                const photoData = uploadedPhotos[i];
 
-                    name: `photo-${index + 1}.jpg`
+                const image = new Image();
 
-                };
+                image.src = photoData;
 
-            });
+
+                await new Promise((resolve, reject) => {
+
+                    image.onload = resolve;
+
+                    image.onerror = reject;
+
+                });
+
+
+                const maxSize = 800;
+
+                let width = image.width;
+
+                let height = image.height;
+
+
+                if(width > maxSize || height > maxSize){
+
+                    if(width > height){
+
+                        height =
+                            Math.round(height * (maxSize / width));
+
+                        width = maxSize;
+
+                    }else{
+
+                        width =
+                            Math.round(width * (maxSize / height));
+
+                        height = maxSize;
+
+                    }
+
+                }
+
+
+                const canvas =
+                    document.createElement("canvas");
+
+                canvas.width = width;
+
+                canvas.height = height;
+
+
+                const context =
+                    canvas.getContext("2d");
+
+
+                context.drawImage(
+                    image,
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+
+                const compressedPhoto =
+                    canvas.toDataURL(
+                        "image/jpeg",
+                        0.82
+                    );
+
+
+                emailPhotos.push({
+
+                    content:
+                        compressedPhoto.split(",")[1],
+
+                    data:
+                        compressedPhoto,
+
+                    name:
+                        `photo-${i + 1}.jpg`
+
+                });
+
+            }
+
+
+            sendButton.innerText = "SENDING...";
 
 
             const response = await fetch(
@@ -305,22 +386,30 @@ if(sendButton){
                     method: "POST",
 
                     headers: {
+
                         "Content-Type": "application/json"
+
                     },
 
                     body: JSON.stringify({
 
-                        customerName: customerName,
+                        customerName:
+                            customerName,
 
-                        customerEmail: customerEmail,
+                        customerEmail:
+                            customerEmail,
 
-                        selectedCard: selectedCard,
+                        selectedCard:
+                            selectedCard,
 
-                        title: title,
+                        title:
+                            title,
 
-                        message: message,
+                        message:
+                            message,
 
-                        photos: photos
+                        photos:
+                            emailPhotos
 
                     })
 
@@ -329,20 +418,24 @@ if(sendButton){
             );
 
 
-            const result = await response.json();
+            const result =
+                await response.json();
 
 
             if(!response.ok || !result.success){
 
-    console.error("BREVO ERROR:", result);
+                console.error(
+                    "BREVO ERROR:",
+                    result
+                );
 
-    throw new Error(
-        result.error?.message ||
-        result.error ||
-        "Email could not be sent."
-    );
+                throw new Error(
+                    result.error?.message ||
+                    result.error ||
+                    "Email could not be sent."
+                );
 
-}
+            }
 
 
             alert(
@@ -354,11 +447,12 @@ if(sendButton){
 
         }catch(error){
 
-    console.error(error);
+            console.error(error);
 
-    alert(
-        "Email failed: " + error.message
-    );
+            alert(
+                "Email failed: " +
+                error.message
+            );
 
 
         }finally{
