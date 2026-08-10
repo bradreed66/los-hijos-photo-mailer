@@ -317,7 +317,7 @@ h2 {
     height:100%;
     background-image:url("assets/ty-card1.png");
     background-size:120% 100%;
-    background-position:left 60%;
+    background-position:left 70%;
     background-repeat:no-repeat;
 
     display:flex;
@@ -333,7 +333,7 @@ h2 {
     height:100%;
     background-image:url("assets/ty-card1.png");
     background-size:120% 100%;
-   background-position:right 60%;
+    background-position:right 70%;
     background-repeat:no-repeat;
 
     color:white;
