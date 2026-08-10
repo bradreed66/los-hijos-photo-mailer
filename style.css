@@ -297,6 +297,7 @@ h2 {
 
 
 
+```css
 /* OPENED CARD */
 
 #emailPreview.open-card {
@@ -310,7 +311,6 @@ h2 {
 }
 
 
-
 /* LEFT SIDE - PHOTOS */
 
 #emailPreview .card-open-left {
@@ -318,14 +318,14 @@ h2 {
     height:100%;
     background-image:url("assets/ty-card1.png");
     background-size:120% 100%;
-    background-position:left center;
+    background-position-x:left;
+    background-position-y:30px;
     background-repeat:no-repeat;
 
     display:flex;
     justify-content:center;
     align-items:center;
 }
-
 
 
 /* RIGHT SIDE - INSIDE MESSAGE */
@@ -335,7 +335,8 @@ h2 {
     height:100%;
     background-image:url("assets/ty-card1.png");
     background-size:120% 100%;
-    background-position:right center;
+    background-position-x:right;
+    background-position-y:30px;
     background-repeat:no-repeat;
 
     color:white;
@@ -348,15 +349,17 @@ h2 {
     justify-content:center;
 }
 
+
 #emailPreview .card-inside h2 {
     color:#d4af37;
 }
-
 
 #emailPreview .card-inside p {
     font-size:18px;
     line-height:1.6;
 }
+```
+
 
 /* OPEN CARD BACKGROUNDS */
 
