@@ -334,11 +334,15 @@ if(sendButton){
 
             if(!response.ok || !result.success){
 
-                console.error(result);
+    console.error("BREVO ERROR:", result);
 
-                throw new Error("Email could not be sent.");
+    throw new Error(
+        result.error?.message ||
+        result.error ||
+        "Email could not be sent."
+    );
 
-            }
+}
 
 
             alert(
@@ -350,11 +354,11 @@ if(sendButton){
 
         }catch(error){
 
-            console.error(error);
+    console.error(error);
 
-            alert(
-                "The email could not be sent."
-            );
+    alert(
+        "Email failed: " + error.message
+    );
 
 
         }finally{
