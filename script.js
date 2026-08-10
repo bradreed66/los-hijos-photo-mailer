@@ -107,53 +107,44 @@ window.openCard = function() {
 
 let uploadedPhotos = [];
 
-
 const photoInput = document.getElementById("photos");
-
 
 if(photoInput){
 
+    photoInput.addEventListener("change", function(event){
 
-photoInput.addEventListener("change", function(event){
-
-
-    Array.from(event.target.files).forEach(file => {
+        Array.from(event.target.files).forEach(file => {
 
 
-        if(uploadedPhotos.length >= 9){
-            return;
-        }
+            if(uploadedPhotos.length >= 9){
+                return;
+            }
 
 
-        const reader = new FileReader();
+            const reader = new FileReader();
 
 
-        reader.onload = function(e){
+            reader.onload = function(e){
+
+                uploadedPhotos.push(e.target.result);
+
+                updatePhotos();
+
+            };
 
 
-            uploadedPhotos.push(e.target.result);
-
-            updatePhotos();
+            reader.readAsDataURL(file);
 
 
-        };
-
-
-        reader.readAsDataURL(file);
-
+        });
 
     });
-
-
-});
-
 
 }
 
 
 
 function updatePhotos(){
-
 
     const previewBox = document.getElementById("photoPreview");
 
@@ -205,8 +196,177 @@ function updatePhotos(){
 
     });
 
-
 }
 
+
+
+// SEND EMAIL
+
+const sendButton = document.querySelector(".send");
+
+if(sendButton){
+
+    sendButton.addEventListener("click", async function(){
+
+        const customerName =
+            document.getElementById("customerName").value.trim();
+
+        const customerEmail =
+            document.getElementById("customerEmail").value.trim();
+
+
+        if(!customerName){
+
+            alert("Please enter the customer's name.");
+
+            return;
+
+        }
+
+
+        if(!customerEmail){
+
+            alert("Please enter the customer's email.");
+
+            return;
+
+        }
+
+
+        if(uploadedPhotos.length === 0){
+
+            alert("Please upload at least one photo.");
+
+            return;
+
+        }
+
+
+        let title = "";
+        let message = "";
+
+
+        if(selectedCard === "gold"){
+
+            title = "Thank You!";
+
+            message =
+                "Thank you for supporting Los Hijos de Maria. Your support keeps live music alive.";
+
+        }
+
+
+        if(selectedCard === "fiesta"){
+
+            title = "Muchas Gracias!";
+
+            message =
+                "Thank you for being part of our music journey. We appreciate your support.";
+
+        }
+
+
+        if(selectedCard === "night"){
+
+            title = "Thank You For Coming";
+
+            message =
+                "Your support keeps live music alive. We can't wait to see you again.";
+
+        }
+
+
+        sendButton.disabled = true;
+
+        sendButton.innerText = "SENDING...";
+
+
+        try{
+
+            const photos = uploadedPhotos.map((photo, index) => {
+
+                return {
+
+                    content: photo.split(",")[1],
+
+                    data: photo,
+
+                    name: `photo-${index + 1}.jpg`
+
+                };
+
+            });
+
+
+            const response = await fetch(
+                "https://los-hijos-email.lilbraddy27.workers.dev/",
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        customerName: customerName,
+
+                        customerEmail: customerEmail,
+
+                        selectedCard: selectedCard,
+
+                        title: title,
+
+                        message: message,
+
+                        photos: photos
+
+                    })
+
+                }
+
+            );
+
+
+            const result = await response.json();
+
+
+            if(!response.ok || !result.success){
+
+                console.error(result);
+
+                throw new Error("Email could not be sent.");
+
+            }
+
+
+            alert(
+                "Email sent successfully to " +
+                customerEmail +
+                "!"
+            );
+
+
+        }catch(error){
+
+            console.error(error);
+
+            alert(
+                "The email could not be sent."
+            );
+
+
+        }finally{
+
+            sendButton.disabled = false;
+
+            sendButton.innerText = "SEND EMAIL";
+
+        }
+
+    });
+
+}
 
 };
